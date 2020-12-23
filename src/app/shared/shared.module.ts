@@ -7,6 +7,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 
+import { FooterComponent } from "./components/footer/footer.component";
+import { NavigationComponent } from "./components/navigation/navigation.component";
+
 const MaterialModule = [
     MatButtonModule,
     MatIconModule,
@@ -15,19 +18,28 @@ const MaterialModule = [
     MatInputModule,
 ]
 
-const PipesModule = [
+const Pipes = [
     
 ]
 
+const Components = [
+    NavigationComponent,
+    FooterComponent
+]
+
 @NgModule({
-    imports: [],
+    imports: [
+        ...MaterialModule, 
+    ],
     exports: [
         ReactiveFormsModule,
         ...MaterialModule,
-        ...PipesModule
+        ...Pipes,
+        ...Components
     ],
     declarations: [
-        ...PipesModule
+        ...Pipes,
+        ...Components
     ]
 })
 export class SharedModule {}
