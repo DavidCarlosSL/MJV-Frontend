@@ -1,0 +1,56 @@
+<app-product-navigation></app-product-navigation>
+
+<div class="products">
+
+    <mat-menu #menu="matMenu">
+        <button (click)="getProducts()" mat-menu-item>Todas</button>
+        <button *ngFor="let category of categories" (click)="setCategory(category.id_category, category.name_category)" mat-menu-item>{{category.name_category}}</button>
+    </mat-menu>
+
+    <section class="content">
+
+        <div class="filters">
+            <div class="searchFilter">
+                <input [(ngModel)]="searchedName" type="text" placeholder="Procure por nome" class="searchInput" />
+                <button mat-button (click)="getProductsByName()"><mat-icon style="color: #1e22aa;">search</mat-icon></button>
+            </div>
+
+            <button mat-raised-button [matMenuTriggerFor]="menu">{{selectedFilter}} ></button>
+        </div>
+
+        <h1 *ngIf="limitReached" class="endListMessage">
+            Opa! Parece que você alcançou o final da lista :/
+        </h1>
+
+        <div>
+            <mat-card *ngFor="let product of products" class="card">
+
+                <mat-card-content class="cardContent">
+                    <img mat-card-image src="{{product.image_product}}" class="cardImage">
+
+                    <div class="cardDescription">
+                        <p class="cardLabel">{{product.name_product}}</p>
+                        <p class="cardLabel">R$: {{product.price_product}}</p>
+
+                        <div class="cardCategories">
+                            <p class="cardCategory" *ngFor="let productCategory of product.categories">{{productCategory.name_category}}</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </section>
+
+    <div class="pagination">
+        <button [disabled]="currentPage == 1" mat-button class="previousButton" (click)="previousPage()">< Anterior</button>
+
+        <h4 class="currentPage">{{currentPage}}</h4>
+
+        <button [disabled]="limitReached" mat-button class="nextButton" (click)="nextPage()">Próxima ></button>
+    </div>
+</div>
+
+<div style="margin-top: 10%">
+    <app-footer></app-footer>
+</div>

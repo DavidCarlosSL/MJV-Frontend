@@ -1,0 +1,38 @@
+.nav {
+    display: flex;
+    height: 80px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.navContent {
+    display: flex;
+    width: 80%;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.navLogo {
+    color: #1e22aa;
+    font-size: 30px;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navOptions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navOptionSignIn {
+    color: #1e22aa;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.navOptionSignUp {
+    color: #1e22aa;
+    font-size: 18px;
+}

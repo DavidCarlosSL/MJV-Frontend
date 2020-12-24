@@ -1,0 +1,69 @@
+.signIn {
+    display: flex;
+    height: 90%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 20%;
+    min-width: 300px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    align-self: center;
+    font-family: 'DM Sans';
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.dmSans {
+    font-family: 'DM Sans';
+}
+
+.errorMessage {
+    align-self: center;
+    color: #dd2929;
+    font-family: 'DM Sans';
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.signInSubmit {
+    background-color: #1e22aa;
+    color: #fff;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'DM Sans';
+}
+
+.signInSubmitDisabled {
+    background-color: #1e23aab2;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'DM Sans';
+    height: 50px;
+    margin-top: 10px;
+}
+
+.cardFooter {
+    align-self: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.footerLabel {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'DM Sans';
+}

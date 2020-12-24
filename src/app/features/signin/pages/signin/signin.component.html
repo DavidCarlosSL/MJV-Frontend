@@ -1,0 +1,50 @@
+<app-navigation></app-navigation>
+<section class="signIn">
+
+    <div class="content">
+        <mat-card class="card">
+
+            <mat-card-title class="cardTitle">Entrar</mat-card-title>
+
+            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                <mat-card-content class="cardContent">
+
+                    <mat-form-field appearance="fill" style="margin-top: 20px;">
+                        <mat-label class="dmSans">Email: </mat-label>
+                        <input type="email" formControlName="emailUser" matInput class="dmSans">
+
+                        <mat-error *ngIf="signInForm.controls.emailUser.hasError('required')">Informe o email</mat-error>
+                        <mat-error *ngIf="signInForm.controls.emailUser.hasError('minlength')">O Email precisa de pelo menos 6 caracteres</mat-error>
+                        <mat-error *ngIf="!signInForm.controls.emailUser.hasError('minlength') && signInForm.controls.emailUser.hasError('email')">Email inválido</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" style="margin-top: 10px;">
+                        <mat-label class="dmSans">Senha: </mat-label>
+                        <input type="password" formControlName="passwordUser" matInput class="dmSans">
+
+                        <mat-error *ngIf="signInForm.controls.passwordUser.hasError('required')"> Informe a senha </mat-error>
+                        <mat-error *ngIf="signInForm.controls.passwordUser.hasError('minlength')"> A senha precisa de pelo menos 6 caracteres </mat-error>
+                    </mat-form-field>
+
+                    <ng-container style="display: flex;" *ngIf="invalidCredentials">
+                        <h4 class="errorMessage">Email e/ou senha inválidos</h4>
+                    </ng-container>
+
+                    <button *ngIf="signInForm.valid" mat-button type="submit" class="signInSubmit">Entrar</button>
+                    <button *ngIf="!signInForm.valid" disabled="true" mat-button type="submit" class="signInSubmitDisabled">Entrar</button>
+
+                </mat-card-content>
+            </form>
+
+            <mat-card-footer class="cardFooter">
+                <a routerLink="/signup" class="footerLabel">Ainda não tem uma conta?</a>
+            </mat-card-footer>
+
+        </mat-card>
+    </div>
+
+</section>
+
+<div>
+    <app-footer></app-footer>
+</div>

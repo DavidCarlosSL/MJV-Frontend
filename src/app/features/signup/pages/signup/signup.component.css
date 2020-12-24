@@ -1,0 +1,71 @@
+.signUp {
+    display: flex;
+    height: 90%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 20%;
+    min-width: 300px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    align-self: center;
+    font-family: 'DM Sans';
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.dmSans {
+    font-family: 'DM Sans';
+}
+
+.errorMessage {
+    align-self: center;
+    color: #dd2929;
+    font-family: 'DM Sans';
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.signUpSubmit {
+    background-color: #1e22aa;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.signUpSubmitDisabled {
+    background-color: #1e23aabb;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.cardFooter {
+    align-self: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.footerLabel {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'DM Sans';
+}
