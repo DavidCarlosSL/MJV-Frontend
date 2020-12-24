@@ -6,6 +6,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
+import { MatMenuModule } from '@angular/material/menu';
 
 import { FooterComponent } from "./components/footer/footer.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
@@ -16,6 +17,7 @@ const MaterialModule = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule
 ]
 
 const Pipes = [

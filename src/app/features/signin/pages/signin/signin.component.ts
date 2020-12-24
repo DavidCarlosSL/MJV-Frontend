@@ -27,6 +27,7 @@ export class SigninComponent {
     .subscribe((response) => {
       localStorage.setItem('userToken', response.data.SignIn.token)
       this.invalidCredentials = false;
+      this.router.navigateByUrl('products')
     }, (error) => {
       if(error.graphQLErrors[0].extensions.authenticated == false)
         this.invalidCredentials = true;

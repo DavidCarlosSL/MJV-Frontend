@@ -1,0 +1,67 @@
+<app-product-navigation></app-product-navigation>
+<div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+
+    <mat-menu #menu="matMenu">
+        <button (click)="getProducts()" mat-menu-item>Todas</button>
+        <button *ngFor="let category of categories" (click)="setCategory(category.id_category, category.name_category)" mat-menu-item>{{category.name_category}}</button>
+    </mat-menu>
+
+    <section style="display: flex; flex-direction: column; width: 82%; margin-top: 40px; ">
+
+        <div style="display: flex; justify-content: space-between;">
+            <div style="display: flex; max-width: 40%; margin-left: 18px;">
+                <input [(ngModel)]="searchedName"
+                type="text"
+                placeholder="Procure por nome" 
+                style="width: 210px; max-width: 70%; border: 0.5px solid rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 10px; font-family: 'DM Sans';"
+                />
+                <button mat-button (click)="getProductsByName()"><mat-icon style="color: #1e22aa;">search</mat-icon></button>
+            </div>
+    
+            <button mat-raised-button [matMenuTriggerFor]="menu">{{selectedFilter}} ></button>
+        </div>
+
+        <h1 *ngIf="limitReached" style="font-family: 'DM Sans'; font-weight: 500; font-size: 24px; align-self: center; color: #1e22aa; margin-top: 20%; padding-bottom: 10%;">
+            Opa! Parece que você alcançou o final da lista :/
+        </h1>
+
+        <div>
+            <mat-card *ngFor="let product of products" 
+            style="float: left; display: flex; flex-direction: column; flex-wrap: wrap; width: 21%; min-width: 91px; height: 430px; align-items: center; margin-top: 30px; margin-left: 20px;"
+            >
+
+                <mat-card-content style="display: flex; flex-direction: column; width: 100%; height: 100%; align-items: center; margin-top: 20px; justify-content: flex-end;">
+                    <img mat-card-image src="{{product.image_product}}" style="width: 140px; max-width: 100%;">
+                    
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; height: 60%; justify-content: flex-end;">
+                        <p style="font-family: 'DM Sans'; font-weight: 500; font-size: 16px;">{{product.name_product}}</p>
+                        <p style="font-family: 'DM Sans'; font-weight: 500; font-size: 16px;">R$: {{product.price_product}}</p>
+                        
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <p style="font-family: 'DM Sans'; font-weight: 500; font-size: 16px; color: #1e22aa; padding-right: 10px;" 
+                            *ngFor="let productCategory of product.categories"
+                            >{{productCategory.name_category}}</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        
+    </section>
+    
+    <div style="display: flex; align-items: baseline; height: 40px; margin-top: 30px;">
+        <button [disabled]="currentPage == 1" mat-button style="margin-right: 20px; font-family: 'DM Sans'; color: #1e22aa; font-size: 16px;"
+        (click)="previousPage()"
+        >< Anterior</button>
+
+        <h4 style="font-size: 16px; font-family: 'DM Sans'; font-weight: 500; color: #1e22aa; font-size: 16px;">{{currentPage}}</h4>
+
+        <button [disabled]="limitReached" mat-button style="margin-left: 20px; font-family: 'DM Sans'; color: #1e22aa; font-size: 16px;"
+        (click)="nextPage()"
+        
+        >Próxima ></button>
+    </div>
+</div>
+<div style="margin-top: 10%">
+    <app-footer></app-footer>
+</div>
