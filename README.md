@@ -1,31 +1,33 @@
-<<<<<<< HEAD
-# MJV-Frontend
-=======
-# Mjv
+<h1 align="center"> MJV <image src="https://mechapp.s3-sa-east-1.amazonaws.com/logo.png" height="32px" width="32px" /> <image src="https://mechapp.s3-sa-east-1.amazonaws.com/5847ea22cef1014c0b5e4833.png" height="32px" width="32px" /> </h1>
+<br>
+<h2> :dart: Objetivo </h2>
+<p> Desenvolver o teste proposto pela MJV </p> <br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+<h2> :page_with_curl: Funcionalidades desenvolvidas </h2>
+<ul>
+  <li>Login</li>
+  <li>Cadastro de usuário</li>
+  <li>Lista de produtos</li>
+  <li>Busca de produtos</li>
+  <li>Paginação</li>
+  <li>Menu de categorias</li>
+</ul> <br>
 
-## Development server
+<h2> :computer: Utilização </h2>
+<h3> :raised_hand: Requisitos </h3>
+<ul>
+  <li>Angular 10+</li>
+  <li>Git</li>
+  <li> API consumida (se encontra nos <b> Meus Repositórios </b>) </li>
+</ul>
+<h3> :envelope: Instruções </h3>
+<p> Clone o repositório -> Dentro da pasta, dê o comando <i> npm install </i> -> Dê o comando <i>ng serve</i> </p> <br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> dev
+<h2> :mag_right: Tecnologias </h2>
+<ul>
+  <li> Angular 11 </li>
+  <li> Apollo Angular </li>
+  <li> GraphQL </li>
+  <li> Angular Material </li>
+</ul><br>
