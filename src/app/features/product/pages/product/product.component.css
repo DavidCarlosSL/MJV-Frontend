@@ -1,3 +1,131 @@
 p {
     margin-block-start: 0em;
 }
+
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 82%;
+    margin-top: 40px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchFilter {
+    display: flex;
+    max-width: 40%;
+    margin-left: 18px;
+}
+
+.searchInput {
+    width: 210px;
+    max-width: 70%;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'DM Sans';
+}
+
+.endListMessage {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-size: 24px;
+    align-self: center;
+    color: #1e22aa;
+    margin-top: 20%;
+    padding-bottom: 10%;
+}
+
+.card {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 21%;
+    min-width: 91px;
+    height: 430px;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.cardImage {
+    width: 140px;
+    max-width: 100%;
+}
+
+.cardDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 60%;
+    justify-content: flex-end;
+}
+
+.cardLabel {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cardCategories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardCategory {
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1e22aa;
+    padding-right: 10px;
+}
+
+.pagination {
+    display: flex;
+    align-items: baseline;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.previousButton {
+    margin-right: 20px;
+    font-family: 'DM Sans';
+    color: #1e22aa;
+    font-size: 16px;
+}
+
+.nextButton {
+    margin-left: 20px;
+    font-family: 'DM Sans';
+    color: #1e22aa;
+    font-size: 16px;
+}
+
+.currentPage {
+    font-size: 16px;
+    font-family: 'DM Sans';
+    font-weight: 500;
+    color: #1e22aa;
+}

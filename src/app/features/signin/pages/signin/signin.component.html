@@ -1,17 +1,17 @@
 <app-navigation></app-navigation>
-<section style="display: flex; height: 90%; width: 100%; justify-content: center; align-items: center;">
+<section class="signIn">
 
-    <div style="width: 20%; min-width: 300px;">
-        <mat-card style="display: flex; flex-direction: column;">
+    <div class="content">
+        <mat-card class="card">
 
-            <mat-card-title style="align-self: center; font-family: 'DM Sans';">Entrar</mat-card-title>
+            <mat-card-title class="cardTitle">Entrar</mat-card-title>
 
             <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-                <mat-card-content style="display: flex; flex-direction: column;">
+                <mat-card-content class="cardContent">
 
                     <mat-form-field appearance="fill" style="margin-top: 20px;">
-                        <mat-label style="font-family: 'DM Sans';">Email: </mat-label>
-                        <input type="email" formControlName="emailUser" matInput style="font-family: 'DM Sans';">
+                        <mat-label class="dmSans">Email: </mat-label>
+                        <input type="email" formControlName="emailUser" matInput class="dmSans">
 
                         <mat-error *ngIf="signInForm.controls.emailUser.hasError('required')">Informe o email</mat-error>
                         <mat-error *ngIf="signInForm.controls.emailUser.hasError('minlength')">O Email precisa de pelo menos 6 caracteres</mat-error>
@@ -19,25 +19,27 @@
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" style="margin-top: 10px;">
-                        <mat-label style="font-family: 'DM Sans';">Senha: </mat-label>
-                        <input type="password" formControlName="passwordUser" matInput style="font-family: 'DM Sans';">
+                        <mat-label class="dmSans">Senha: </mat-label>
+                        <input type="password" formControlName="passwordUser" matInput class="dmSans">
 
-                        <mat-error *ngIf="signInForm.controls.passwordUser.hasError('required')"> Informe a senha </mat-error> 
+                        <mat-error *ngIf="signInForm.controls.passwordUser.hasError('required')"> Informe a senha </mat-error>
                         <mat-error *ngIf="signInForm.controls.passwordUser.hasError('minlength')"> A senha precisa de pelo menos 6 caracteres </mat-error>
                     </mat-form-field>
 
-                    <ng-container style="display: flex;" *ngIf="invalidCredentials"><h4 style="align-self: center; color: #dd2929; font-family: 'DM Sans'; margin-top: 0px; margin-bottom: 0px;">Email e/ou senha inválidos</h4></ng-container>
-                    
-                    <button *ngIf="signInForm.valid" mat-button type="submit" style="background-color: #1e22aa; color: #fff; height: 50px; margin-top: 10px; font-size: 18px; font-family: 'DM Sans';">Entrar</button>
-                    <button *ngIf="!signInForm.valid" disabled="true" mat-button type="submit" style="background-color:#1e23aab2; color: #fff; font-size: 18px; font-family: 'DM Sans'; height: 50px; margin-top: 10px;">Entrar</button>
-                
+                    <ng-container style="display: flex;" *ngIf="invalidCredentials">
+                        <h4 class="errorMessage">Email e/ou senha inválidos</h4>
+                    </ng-container>
+
+                    <button *ngIf="signInForm.valid" mat-button type="submit" class="signInSubmit">Entrar</button>
+                    <button *ngIf="!signInForm.valid" disabled="true" mat-button type="submit" class="signInSubmitDisabled">Entrar</button>
+
                 </mat-card-content>
             </form>
 
-            <mat-card-footer style="align-self: center; margin-top: 10px; padding-bottom: 20px;">
-                <a routerLink="/signup" style="text-decoration: none; font-size: 16px; font-family: 'DM Sans';">Ainda não tem uma conta?</a>
+            <mat-card-footer class="cardFooter">
+                <a routerLink="/signup" class="footerLabel">Ainda não tem uma conta?</a>
             </mat-card-footer>
-            
+
         </mat-card>
     </div>
 
